@@ -8,8 +8,10 @@ if gewicht > 20:
     print("das paket ist zu gross")
 else:
     if gewicht >= 10:
-        print("14 euro")
+        preis = 14
     elif gewicht >= 5:
-        print("10,50Euro")
+        preis = 10.50
     else:
-        print("7Euro")
+        preis = 7
+
+    print(preis)
