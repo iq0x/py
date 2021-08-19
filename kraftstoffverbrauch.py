@@ -1,7 +1,5 @@
 print ("Kraftstoffverbrauch");
 
-liter = 1.95583
-
 km_input = float(input("km: "))
 
 print(km_input, "km")
