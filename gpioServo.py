@@ -1,24 +1,20 @@
-import RPi.GPIO as GPIO
-import time
+import readchar
+from gpiozero import Servo
+from time import sleep
 
-GPIO.setmode(GPIO.BOARD)
+servo = Servo(20)
 
-GPIO.setup(18, GPIO.OUT)
+while 1:
+    key = readchar.readkey()
+    print(key)
+    if key == 'q':
+        break
+    if key == 'd':
+        servo.max()
+    if key == 'a':
+        servo.min()
+    if key == '':
+        servo.max()
+    if key == 's':
+        servo.min()
 
-p = GPIO.PWM(18, 50)
-
-p.start(7.5)
-
-try:
-	while True:
-		p.ChangeDutyCycle(7.5) #90 degree
-		time.sleep(1)
-		p.ChangeDutyCycle(2.5) #0 degree
-		time.sleep(1)
-		p.ChangeDutyCycle(12.5) #180 degree
-		time.sleep(1)
-
-except KeyboardInterrupt:
-	p.stop()
-
-GPIO.cleanup()
