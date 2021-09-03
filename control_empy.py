@@ -1,10 +1,5 @@
 import readchar
 
-##################################
-#print("Reading a char:")
-#print(repr(readchar.readchar()))
-##################################
-
 i = 1
 while 1:
     i += 1
